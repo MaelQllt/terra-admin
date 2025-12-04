@@ -6,6 +6,11 @@ const WidgetItemInput = ({ source }) => {
   const {
     input: { onChange: onChangeName },
   } = useInput({ source: `${source}.name` });
+
+  const {
+    input: { value: typeValue },
+  } = useInput({ source: `${source}.type` });
+
   return (
     <div
       style={{
@@ -32,6 +37,7 @@ const WidgetItemInput = ({ source }) => {
           { id: 'sum', name: 'Sum' },
           { id: 'avg', name: 'Average' },
           { id: 'value_count', name: 'Count' },
+          { id: 'terms', name: 'Distribution' },
         ]}
         translateChoice={false}
         helperText={false}
@@ -41,12 +47,27 @@ const WidgetItemInput = ({ source }) => {
         required
         source={`${source}.field`}
       />
-      <TextInput
-        label="resources.datalayer.widgets-editor.template"
-        required
-        defaultValue="{{value}}"
-        source={`${source}.template`}
-      />
+      {typeValue !== 'terms' ? (
+        <TextInput
+          label="resources.datalayer.widgets-editor.template"
+          required
+          defaultValue="{{value}}"
+          source={`${source}.template`}
+        />
+      ) : (
+        <SelectInput
+          required
+          source={`${source}.graph.type`}
+          label="resources.datalayer.widgets-editor.graph-type"
+          choices={[
+            { id: 'bar', name: 'Bar' },
+            { id: 'pie', name: 'Pie' },
+          ]}
+          defaultValue="bar"
+          translateChoice={false}
+          helperText={false}
+        />
+      )}
     </div>
   );
 };

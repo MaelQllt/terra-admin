@@ -440,31 +440,31 @@
       "error": "Erreur"
     },
     "tooltip": {
-     "times": "Temps",
-     "started": "Commencé le",
-     "finished": "Finit le",
+      "times": "Temps",
+      "started": "Commencé le",
+      "finished": "Finit le",
       "notStarted": "Pas encore commencé",
       "notFinished": "Pas encore fini",
-     "lines": {
-       "singular": "ligne",
-       "plural": "lignes"
-     },
-     "added": {
-       "singular": "ligne ajoutée",
-       "plural": "lignes ajoutées"
-     },
-     "modified": {
-       "singular": "ligne modifiée",
-       "plural": "lignes modifiées"
-     },
-     "deleted": {
-       "singular": "ligne supprimée",
-       "plural": "lignes supprimées"
-     },
-     "errors": {
-       "singular": "erreur",
-       "plural": "erreurs"
-     }
+      "lines": {
+        "singular": "ligne",
+        "plural": "lignes"
+      },
+      "added": {
+        "singular": "ligne ajoutée",
+        "plural": "lignes ajoutées"
+      },
+      "modified": {
+        "singular": "ligne modifiée",
+        "plural": "lignes modifiées"
+      },
+      "deleted": {
+        "singular": "ligne supprimée",
+        "plural": "lignes supprimées"
+      },
+      "errors": {
+        "singular": "erreur",
+        "plural": "erreurs"
+      }
     }
   },
   "datalayer": {
@@ -1074,6 +1074,7 @@
         "json-editor": "Éditeur JSON",
         "label": "Label",
         "type": "Type",
+        "graph-type": "Type de graphique",
         "field": "Champ",
         "template": "Modèle",
         "name": "Nom",
