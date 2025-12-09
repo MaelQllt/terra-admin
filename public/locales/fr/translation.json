@@ -1075,7 +1075,10 @@
         "label": "Label",
         "type": "Type",
         "graph-type": "Type de graphique",
-        "field": "Champ",
+        "field": {
+          "integer": "Champ numérique",
+          "string": "Champ textuel"
+        },
         "template": "Modèle",
         "name": "Nom",
         "icon": "Icône",

@@ -1021,7 +1021,10 @@
         "label": "Label",
         "type": "Type",
         "graph-type": "Graph type",
-        "field": "Field",
+        "field": {
+          "integer": "Integer Field",
+          "string": "String Field"
+        },
         "template": "Template",
         "name": "Name",
         "icon": "Icon",

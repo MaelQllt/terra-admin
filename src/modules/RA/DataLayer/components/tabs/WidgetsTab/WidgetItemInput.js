@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import { SelectInput, TextInput, useInput } from 'react-admin';
+import { useField } from 'react-final-form';
+import { fieldTypes } from '../../../../DataSource';
+import DataFieldInput from './DataFieldInput';
 
 const WidgetItemInput = ({ source }) => {
   const {
@@ -10,6 +13,17 @@ const WidgetItemInput = ({ source }) => {
   const {
     input: { value: typeValue },
   } = useInput({ source: `${source}.type` });
+
+  const { input: { value: fields } } = useField('fields');
+
+  const isStringFieldNeeded = typeValue === 'terms';
+
+  const filteredFields = useMemo(() => {
+    if (isStringFieldNeeded) {
+      return fields.filter(f => fieldTypes[f.data_type] === 'String');
+    }
+    return fields.filter(f => fieldTypes[f.data_type] === 'Integer');
+  }, [fields, isStringFieldNeeded]);
 
   return (
     <div
@@ -42,10 +56,12 @@ const WidgetItemInput = ({ source }) => {
         translateChoice={false}
         helperText={false}
       />
-      <TextInput
-        label="resources.datalayer.widgets-editor.field"
+      <DataFieldInput
+        fields={filteredFields}
+        label={`resources.datalayer.widgets-editor.field.${isStringFieldNeeded ? 'string' : 'integer'}`}
         required
         source={`${source}.field`}
+        translateChoice={false}
       />
       {typeValue !== 'terms' ? (
         <TextInput
