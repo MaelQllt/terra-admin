@@ -388,31 +388,31 @@
       "error": "Error"
     },
     "tooltip": {
-     "times": "Times",
-     "started": "Started on",
-     "finished": "Finished on",
-     "notStarted": "Not started yet",
-     "notFinished": "Not finished yet",
-     "lines": {
-       "singular": "line",
-       "plural": "lines"
-     },
-     "added": {
-       "singular": "line added",
-       "plural": "lines added"
-     },
-     "modified": {
-       "singular": "line modified",
-       "plural": "lines modified"
-     },
-     "deleted": {
-       "singular": "line deleted",
-       "plural": "lines deleted"
-     },
-     "errors": {
-       "singular": "error",
-       "plural": "errors"
-     }
+      "times": "Times",
+      "started": "Started on",
+      "finished": "Finished on",
+      "notStarted": "Not started yet",
+      "notFinished": "Not finished yet",
+      "lines": {
+        "singular": "line",
+        "plural": "lines"
+      },
+      "added": {
+        "singular": "line added",
+        "plural": "lines added"
+      },
+      "modified": {
+        "singular": "line modified",
+        "plural": "lines modified"
+      },
+      "deleted": {
+        "singular": "line deleted",
+        "plural": "lines deleted"
+      },
+      "errors": {
+        "singular": "error",
+        "plural": "errors"
+      }
     }
   },
   "datalayer": {
@@ -425,7 +425,7 @@
       "data-source": "Data source",
       "definition": "Definition",
       "source-filter": {
-        "label":"Source filter",
+        "label": "Source filter",
         "helper": "You can use an expression to filter the source data. ex: « name == \"john\" and age > 18 »",
         "error": "Your input can't be parsed, please fix it.",
         "error-invalid": "Your input is invalid, see error below.",
@@ -1017,10 +1017,41 @@
       "forcedCaseName": "Layer",
       "widgets-editor": {
         "title": "Widgets configuration",
+        "settings": "Widget settings",
         "json-editor": "JSON editor",
         "label": "Label",
         "type": "Type",
-        "field": "Field",
+        "decimals": "Number of decimal digits",
+        "data": "Data configuration",
+        "description": {
+          "sum": "Total sum of all values in the dataset.",
+          "avg": "Arithmetic mean of the values.",
+          "value_count": "Total number of recorded values.",
+          "distribution": "Statistical distribution graph of values.",
+          "categoric": "Categorical breakdown graph of values.",
+          "numeric": "Graph of numeric values used for quantitative analysis."
+        },
+        "graph": {
+          "title": "Graph configuration",
+          "type": "Graph type",
+          "percent": "Display as percents",
+          "unit": "Unit",
+          "orientation": {
+            "label": "Orientation",
+            "vertical": "Vertical",
+            "horizontal": "Horizontal"
+          },
+          "field": {
+            "categoric": "String category field",
+            "numeric": "Integer fields",
+            "value": "Integer value field"
+          },
+          "aggregation_type": "Aggregation Type"
+        },
+        "field": {
+          "integer": "Integer Field",
+          "string": "String Field"
+        },
         "template": "Template",
         "name": "Name",
         "icon": "Icon",

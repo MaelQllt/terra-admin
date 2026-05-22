@@ -440,31 +440,31 @@
       "error": "Erreur"
     },
     "tooltip": {
-     "times": "Temps",
-     "started": "Commencé le",
-     "finished": "Finit le",
+      "times": "Temps",
+      "started": "Commencé le",
+      "finished": "Finit le",
       "notStarted": "Pas encore commencé",
       "notFinished": "Pas encore fini",
-     "lines": {
-       "singular": "ligne",
-       "plural": "lignes"
-     },
-     "added": {
-       "singular": "ligne ajoutée",
-       "plural": "lignes ajoutées"
-     },
-     "modified": {
-       "singular": "ligne modifiée",
-       "plural": "lignes modifiées"
-     },
-     "deleted": {
-       "singular": "ligne supprimée",
-       "plural": "lignes supprimées"
-     },
-     "errors": {
-       "singular": "erreur",
-       "plural": "erreurs"
-     }
+      "lines": {
+        "singular": "ligne",
+        "plural": "lignes"
+      },
+      "added": {
+        "singular": "ligne ajoutée",
+        "plural": "lignes ajoutées"
+      },
+      "modified": {
+        "singular": "ligne modifiée",
+        "plural": "lignes modifiées"
+      },
+      "deleted": {
+        "singular": "ligne supprimée",
+        "plural": "lignes supprimées"
+      },
+      "errors": {
+        "singular": "erreur",
+        "plural": "erreurs"
+      }
     }
   },
   "datalayer": {
@@ -1071,10 +1071,41 @@
       "forcedCaseName": "Couche",
       "widgets-editor": {
         "title": "Configuration des widgets",
+        "settings": "Paramètres du widget",
         "json-editor": "Éditeur JSON",
         "label": "Label",
         "type": "Type",
-        "field": "Champ",
+        "decimals": "Nombre de chiffres après la virgule",
+        "data": "Configuration des données",
+        "description": {
+          "sum": "Somme totale de toutes les valeurs.",
+          "avg": "Moyenne de toutes les valeurs.",
+          "value_count": "Nombre total d'occurences de la valeur.",
+          "distribution": "Graphique de la distribution statistique des valeurs.",
+          "categoric": "Graphique par catégories des valeurs.",
+          "numeric": "Graphique de valeurs numériques utilisées pour une analyse quantitative."
+        },
+        "graph": {
+          "title": "Configuration du graphique",
+          "type": "Type de graphique",
+          "percent": "Afficher en pourcentage",
+          "unit": "Unité",
+          "orientation": {
+            "label": "Orientation",
+            "vertical": "Vertical",
+            "horizontal": "Horizontal"
+          },
+          "field": {
+            "categoric": "Champ de catégorie textuel",
+            "numeric": "Champs numériques",
+            "value": "Champ de valeur numérique"
+          },
+          "aggregation_type": "Aggregation Type"
+        },
+        "field": {
+          "integer": "Champ numérique",
+          "string": "Champ textuel"
+        },
         "template": "Modèle",
         "name": "Nom",
         "icon": "Icône",
