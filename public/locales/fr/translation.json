@@ -1286,5 +1286,14 @@
     "compare": {
       "placeholder": "Image est introuvable."
     }
+  },
+  "discret": {
+    "preview": "Distribution par classe",
+    "toggle": {
+      "rug": "Population",
+      "mean": "Moyenne",
+      "median": "Médiane",
+      "stddev": "Écart-type"
+    }
   }
 }
