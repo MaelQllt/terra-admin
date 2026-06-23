@@ -71,7 +71,7 @@ const ColorPicker = ({ value = '#ccccccff', onChange = () => {}, disabled, style
   const handleChangeComplete = React.useCallback(
     newColor => {
       setCurrentColor(newColor.hsl);
-      onChange(tinycolor(newColor.rgb).toHslString());
+      onChange(tinycolor(newColor.rgb).toHexString());
     },
     [onChange],
   );
