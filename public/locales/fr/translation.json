@@ -323,7 +323,7 @@
       "uid-field": "Champ de l'identifiant unique",
       "uid-field-help": "Indiquer le champs correspondant à l'identifiant unique de la donnée (ex: gid, id..).",
       "layer-name": "Nom de la couche",
-      "layer-name-help": "Laisser vide pour sélectionner automatiquement la seule couche. Obligatoire si le GeoPackage contient plusieurs couches.",
+      "layer-name-help": "Choisir la couche à importer si plusieurs sont disponibles.",
       "use-by": "Utilisé par",
       "data": "Données",
       "label": "Libellé",

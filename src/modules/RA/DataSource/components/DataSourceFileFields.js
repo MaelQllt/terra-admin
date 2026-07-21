@@ -10,27 +10,10 @@ import {
 
 import { geomTypeChoices, GPKG } from '..';
 import FieldGroup from '../../../../components/react-admin/FieldGroup';
+import GpkgLayerNameSelect from './GpkgLayerNameSelect';
 
 const DataSourceFileFields = ({ translate: t, type, ...props }) => (
   <FieldGroup {...props}>
-    <SelectInput
-      source="geom_type"
-      label="datasource.form.geometry"
-      validate={[required()]}
-      choices={geomTypeChoices}
-      format={v => `${v}`}
-      parse={v => +v}
-    />
-
-    {type === GPKG && (
-      <TextInput
-        type="text"
-        source="layer_name"
-        label="datasource.form.layer-name"
-        helperText={t('datasource.form.layer-name-help')}
-      />
-    )}
-
     <FileInput
       source="file"
       label="datasource.form.file.related-files"
@@ -39,6 +22,17 @@ const DataSourceFileFields = ({ translate: t, type, ...props }) => (
     >
       <FileField source="file_data" title="title" />
     </FileInput>
+
+    {type === GPKG && <GpkgLayerNameSelect />}
+
+    <SelectInput
+      source="geom_type"
+      label="datasource.form.geometry"
+      validate={[required()]}
+      choices={geomTypeChoices}
+      format={v => `${v}`}
+      parse={v => +v}
+    />
 
     <TextInput
       type="text"
