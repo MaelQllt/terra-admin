@@ -18,9 +18,10 @@ import {
   GEOJSON,
   GPKG,
   SHP,
+  GEOFILE,
   WMTS,
   CSV,
-  sourceTypeChoices,
+  createSourceTypeChoices,
 } from '..';
 
 import DataSourceHelp from '../components/DataSourceHelp';
@@ -40,7 +41,7 @@ export const DataSourceCreate = props => (
         source="_type"
         label="datasource.form.data-type"
         validate={defaultRequired}
-        choices={sourceTypeChoices}
+        choices={createSourceTypeChoices}
       />
 
       <DataSourceHelp />
@@ -52,7 +53,8 @@ export const DataSourceCreate = props => (
 
       <FormDataConsumer>
         {({ formData: { _type: type } = {}, ...rest }) =>
-          [SHP, GEOJSON, GPKG].includes(type) && <DataSourceFileFields {...rest} type={type} />}
+          [GEOFILE, GEOJSON, SHP, GPKG].includes(type)
+          && <DataSourceFileFields {...rest} type={type} />}
       </FormDataConsumer>
 
       <FormDataConsumer>

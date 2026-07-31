@@ -5,7 +5,7 @@ import {
   MULTI_POINT,
   MULTI_LINESTRING,
   MULTI_POLYGON,
-  GEOMETRY_COLLECTION,
+  // GEOMETRY_COLLECTION,
 } from '../../../utils/geom';
 
 export const GEOJSON = 'GeoJSONSource';
@@ -14,6 +14,7 @@ export const WMTS = 'WMTSSource';
 export const SHP = 'ShapefileSource';
 export const CSV = 'CSVSource';
 export const GPKG = 'GeoPackageSource';
+export const GEOFILE = 'GeoFileSource';
 export const UTF8 = 'UTF8';
 export const LATIN1 = 'LATIN1';
 export const EPSG4326 = 'EPSG_4326';
@@ -24,6 +25,7 @@ const typesToChoices = types => Object.entries(types)
   .map(([id, name]) => ({ id, name }));
 
 export const sourceTypes = {
+  [GEOFILE]: 'Fichier géo',
   [GEOJSON]: 'GeoJSON',
   [GPKG]: 'GeoPackage',
   [SHP]: 'Shapefile',
@@ -33,6 +35,14 @@ export const sourceTypes = {
 };
 export const sourceTypeChoices = typesToChoices(sourceTypes);
 
+export const createSourceTypes = {
+  [GEOFILE]: 'Fichier géo',
+  [SQL]: 'PostGIS',
+  [WMTS]: 'WMTS',
+  [CSV]: 'CSV',
+};
+export const createSourceTypeChoices = typesToChoices(createSourceTypes);
+
 export const geomTypes = {
   [POINT]: 'Point',
   [LINESTRING]: 'LineString',
@@ -41,7 +51,7 @@ export const geomTypes = {
   [MULTI_POINT]: 'MultiPoint',
   [MULTI_LINESTRING]: 'MultiLineString',
   [MULTI_POLYGON]: 'MultiPolygon',
-  [GEOMETRY_COLLECTION]: 'GeometryCollection',
+  // [GEOMETRY_COLLECTION]: 'GeometryCollection',
 };
 export const geomTypeChoices = typesToChoices(geomTypes);
 

@@ -20,6 +20,7 @@ import {
 } from '..';
 
 import FieldGroup from '../../../../components/react-admin/FieldGroup';
+import FilePreview from './FilePreview';
 
 const DataSourceCSVFields = ({ translate: t, type, ...props }) => (
   <FieldGroup {...props}>
@@ -31,6 +32,8 @@ const DataSourceCSVFields = ({ translate: t, type, ...props }) => (
     >
       <FileField source="file_data" title="title" />
     </FileInput>
+
+    <FilePreview />
 
     <SelectInput
       source="encoding"
