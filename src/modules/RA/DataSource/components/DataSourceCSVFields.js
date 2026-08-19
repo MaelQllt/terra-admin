@@ -22,7 +22,7 @@ import {
 import FieldGroup from '../../../../components/react-admin/FieldGroup';
 import FilePreview from './FilePreview';
 
-const DataSourceCSVFields = ({ translate: t, type, ...props }) => (
+const DataSourceCSVFields = ({ translate: t, ...props }) => (
   <FieldGroup {...props}>
     <FileInput
       source="file"

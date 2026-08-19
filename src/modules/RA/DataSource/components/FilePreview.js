@@ -291,7 +291,7 @@ const FilePreview = () => {
 
   const hasMore = recordCount > MAX_DISPLAY;
   const hasGeom = !!geomName || !!geomTypes?.length;
-  const geomLabel = mixedGeometries ? geomTypes.join(', ') : geomName;
+  const geomLabel = mixedGeometries ? geomTypes?.join(', ') : geomName;
   const fileSizeLabel = formatSize(fileValue?.rawFile?.size ?? fileSize);
   const isGpkgFile = fileValue?.rawFile?.name?.toLowerCase().endsWith('.gpkg');
 
