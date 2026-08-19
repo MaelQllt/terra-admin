@@ -661,12 +661,6 @@
         "no-source": "Veuillez choisir une source de données avant de configurer les styles",
         "secondarylabels": "Styles secondaires"
       },
-      "style-images": {
-        "tab": "Icônes",
-        "name": "Nom",
-        "compose": "Composer",
-        "upload": "Envoyer"
-      },
       "embed": {
         "tab": "Inclusions",
         "no-embed": "Pour activer les inclusions, cliquer sur",
@@ -695,6 +689,28 @@
         "field-source": "Champ source",
         "field-required": "Requis",
         "field-helptext": "Texte d'aide"
+      }
+    }
+  },
+  "icon": {
+    "form": {
+      "name": "Nom",
+      "file": {
+        "label": "Fichier",
+        "picker": "Choisir une icône",
+        "compose": "Composer",
+        "iconPicker": {
+          "button": "Choisir une icône",
+          "empty": "Aucune icône disponible",
+          "dialog": {
+            "title": "Choisir une icône",
+            "categories": "Catégories",
+            "icons": "Icônes",
+            "selected": "Sélectionnées",
+            "cancel": "Annuler"
+          }
+        },
+        "upload": "Envoyer"
       }
     }
   },
@@ -742,12 +758,33 @@
       "latitude": "latitude",
       "zoom": "zoom",
       "extent-label": "Définissez la zone à afficher"
+    },
+    "tree": {
+      "add-group": "Créer un groupe",
+      "new-group": "Nouveau groupe",
+      "add-layer": "Ajouter une couche",
+      "add-subgroup": "Ajouter un sous-groupe",
+      "settings": "Paramètres",
+      "open-layer": "Ouvrir la couche dans un nouvel onglet",
+      "layer-name": "Couche : %{name}",
+      "open-by-default": "Ouvert par défaut dans le visualiseur",
+      "closed-by-default": "Fermé par défaut dans le visualiseur",
+      "layer-label": "Libellé",
+      "reset-label": "Revenir au nom de la couche",
+      "selection-mode": "Mode de sélection des couches",
+      "inclusive": "Inclusif",
+      "exclusive": "Exclusif",
+      "by-variable": "Par variables",
+      "add-variable": "Ajouter une variable",
+      "layer": "Couche",
+      "no-layer-available": "Toutes les couches existantes sont déjà associées."
     }
   },
   "ra": {
     "nav": {
       "baselayer_list": "Liste des fonds de carte",
       "user_list": "Liste des utilisateurs",
+      "icon_list": "Liste des icônes",
       "usergroup_list": "Liste des groupes utilisateurs",
       "datalayer_list": "Liste des couches",
       "datasource_list": "Liste des sources de données",
@@ -836,6 +873,7 @@
       "loading": "La page est en cours de chargement, merci de bien vouloir patienter.",
       "no": "Non",
       "not_found": "L'URL saisie est incorrecte, ou vous avez suivi un mauvais lien.",
+      "unsaved_changes": "Certains changements n'ont pas été enregistrés. Êtes-vous sûr(e) de vouloir quitter cette page ?",
       "yes": "Oui"
     },
     "navigation": {
