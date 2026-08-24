@@ -1,8 +1,9 @@
 import React from 'react';
 import { useField } from 'react-final-form';
-import { SelectInput, LinearProgress } from 'react-admin';
+import { SelectInput } from 'react-admin';
 import { useTranslation } from 'react-i18next';
 import { FormHelperText } from '@material-ui/core';
+import { Skeleton } from '@material-ui/lab';
 import Api from '@terralego/core/modules/Api';
 
 const GpkgLayerNameSelect = () => {
@@ -43,7 +44,7 @@ const GpkgLayerNameSelect = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fileValue]);
 
-  if (loading) return <LinearProgress />;
+  if (loading) return <Skeleton variant="rect" height={50} style={{ marginBottom: 16, maxWidth: 400 }} />;
   if (error) return <FormHelperText error>{error}</FormHelperText>;
   if (layerNames.length === 0) return null;
 
