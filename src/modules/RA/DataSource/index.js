@@ -43,6 +43,13 @@ export const createSourceTypes = {
 };
 export const createSourceTypeChoices = typesToChoices(createSourceTypes);
 
+export const fileAcceptByType = {
+  [GEOJSON]: '.geojson,.json',
+  [GPKG]: '.gpkg',
+  [SHP]: '.zip,.shp',
+  [GEOFILE]: '.gpkg,.zip,.shp,.geojson,.json',
+};
+
 export const geomTypes = {
   [POINT]: 'Point',
   [LINESTRING]: 'LineString',

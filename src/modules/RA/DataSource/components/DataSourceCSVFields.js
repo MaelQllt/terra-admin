@@ -2,7 +2,6 @@
 import React from 'react';
 import {
   BooleanInput,
-  FileInput,
   FileField,
   TextInput,
   NumberInput,
@@ -22,6 +21,7 @@ import {
 import FieldGroup from '../../../../components/react-admin/FieldGroup';
 import FilePreview from './FilePreview';
 import IdFieldSelect from './IdFieldSelect';
+import RestrictedFileInput from './RestrictedFileInput';
 import useFilePreview from './useFilePreview';
 
 const DataSourceCSVFields = ({ translate: t, type, ...props }) => {
@@ -29,14 +29,15 @@ const DataSourceCSVFields = ({ translate: t, type, ...props }) => {
 
   return (
     <FieldGroup {...props}>
-      <FileInput
+      <RestrictedFileInput
         source="file"
+        accept=".csv"
         label="datasource.form.file.related-files"
         multiple={false}
         placeholder={t('datasource.form.file.placeholderCSV')}
       >
         <FileField source="file_data" title="title" />
-      </FileInput>
+      </RestrictedFileInput>
 
       <FilePreview {...filePreview} />
 

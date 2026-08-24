@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  FileInput,
   FileField,
   SelectInput,
   translate,
@@ -10,11 +9,12 @@ import {
 import { useField } from 'react-final-form';
 import { Typography } from '@material-ui/core';
 
-import { geomTypeChoices, GPKG } from '..';
+import { fileAcceptByType, geomTypeChoices, GPKG } from '..';
 import FieldGroup from '../../../../components/react-admin/FieldGroup';
 import GpkgLayerNameSelect from './GpkgLayerNameSelect';
 import FilePreview from './FilePreview';
 import IdFieldSelect from './IdFieldSelect';
+import RestrictedFileInput from './RestrictedFileInput';
 import useFilePreview from './useFilePreview';
 
 const DataSourceFileFields = ({ translate: t, type, ...props }) => {
@@ -59,14 +59,15 @@ const DataSourceFileFields = ({ translate: t, type, ...props }) => {
         </Typography>
       )}
 
-      <FileInput
+      <RestrictedFileInput
         source="file"
+        accept={fileAcceptByType[type]}
         label={isEdit ? 'datasource.form.file.replace' : 'datasource.form.file.related-files'}
         multiple={false}
         placeholder={t('datasource.form.file.placeholder')}
       >
         <FileField source="file_data" title="title" />
-      </FileInput>
+      </RestrictedFileInput>
 
       {isGpkg && <GpkgLayerNameSelect />}
 

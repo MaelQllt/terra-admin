@@ -296,7 +296,8 @@
         "replace": "Replace file",
         "current": "Current file",
         "placeholder": "Drop here GeoJSON, zipped shapefile or GeoPackage.",
-        "placeholderCSV": "Drop here CSV file."
+        "placeholderCSV": "Drop here CSV file.",
+        "unsupported": "This file type is not supported, please try again."
       },
       "coordinates": {
         "coordinatesField": "Coordinates field name",

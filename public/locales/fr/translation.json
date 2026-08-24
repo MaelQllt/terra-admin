@@ -348,7 +348,8 @@
         "replace": "Remplacer le fichier",
         "current": "Fichier actuel",
         "placeholder": "Déposez ici le GeoJSON, un zip des fichiers Shapefile ou un GeoPackage.",
-        "placeholderCSV": "Déposez ici le fichier CSV"
+        "placeholderCSV": "Déposez ici le fichier CSV",
+        "unsupported": "Ce fichier n'est pas supporté, veuillez réessayer."
       },
       "coordinates": {
         "coordinatesField": "Nom du champ de coordonnées",
