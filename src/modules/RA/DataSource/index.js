@@ -14,6 +14,7 @@ export const WMTS = 'WMTSSource';
 export const SHP = 'ShapefileSource';
 export const CSV = 'CSVSource';
 export const GPKG = 'GeoPackageSource';
+export const GEOFILE = 'GeoFileSource';
 export const UTF8 = 'UTF8';
 export const LATIN1 = 'LATIN1';
 export const EPSG4326 = 'EPSG_4326';
