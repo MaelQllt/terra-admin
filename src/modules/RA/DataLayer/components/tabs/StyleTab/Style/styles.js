@@ -93,18 +93,6 @@ const styles = {
     gap: 16,
     marginBottom: 8,
   },
-  toggles: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    marginTop: 8,
-    '& label': {
-      cursor: 'pointer',
-      fontSize: '0.85em',
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: 4,
-    },
-  },
 };
 
 export default styles;

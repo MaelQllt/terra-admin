@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Plot from '@observablehq/plot';
+import { useLocale } from 'react-admin';
 
 import PlotChart from './PlotChart';
 
@@ -8,6 +9,8 @@ export const MEDIAN_COLOR = '#a3b2b2';
 export const STDDEV_COLOR = '#114a07';
 
 const ClassifGraph = ({ breaksData, stats }) => {
+  const locale = useLocale();
+
   const options = React.useMemo(() => {
     if (breaksData.length === 0) return null;
 
@@ -74,7 +77,7 @@ const ClassifGraph = ({ breaksData, stats }) => {
       marginTop: 12,
       x: {
         domain: plotRange,
-        tickFormat: d => d.toLocaleString('fr'),
+        tickFormat: d => d.toLocaleString(locale),
         label: null,
       },
       y: {
@@ -84,7 +87,7 @@ const ClassifGraph = ({ breaksData, stats }) => {
       },
       marks,
     };
-  }, [breaksData, stats]);
+  }, [breaksData, stats, locale]);
 
   if (!options) return null;
 

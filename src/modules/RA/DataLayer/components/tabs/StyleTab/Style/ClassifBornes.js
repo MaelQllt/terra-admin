@@ -1,8 +1,9 @@
 import React from 'react';
-import { useTranslate } from 'react-admin';
+import { useLocale, useTranslate } from 'react-admin';
 
 const ClassifBornes = ({ breaksData }) => {
   const translate = useTranslate();
+  const locale = useLocale();
   if (breaksData.length === 0) return null;
 
   return (
@@ -48,9 +49,9 @@ const ClassifBornes = ({ breaksData }) => {
             />
             <span>
               {'['}
-              {typeof d.x1 === 'number' ? d.x1.toLocaleString() : d.x1}
+              {typeof d.x1 === 'number' ? d.x1.toLocaleString(locale) : d.x1}
               {' - '}
-              {typeof d.x2 === 'number' ? d.x2.toLocaleString() : d.x2}
+              {typeof d.x2 === 'number' ? d.x2.toLocaleString(locale) : d.x2}
               {i === breaksData.length - 1 ? ']' : '['}
             </span>
           </div>

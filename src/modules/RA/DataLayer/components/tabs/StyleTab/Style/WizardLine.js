@@ -75,6 +75,7 @@ const WizardLine = ({ path, fields, getValuesOfProperty, shouldDisplayLabels, la
           path={`${path}.style.line_width`}
           fields={fields}
           getValuesOfProperty={getValuesOfProperty}
+          layerName={layerName}
         />
       </div>
 

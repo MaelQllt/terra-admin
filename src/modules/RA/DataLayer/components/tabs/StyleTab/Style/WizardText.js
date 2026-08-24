@@ -76,6 +76,7 @@ const WizardText = ({ path, fields, getValuesOfProperty, layerName }) => {
           choices={fieldChoices}
           format={formatFieldValue}
           parse={parseFieldValue}
+          layerName={layerName}
         />
       </div>
       <div className={classes.configLine}>
@@ -100,6 +101,7 @@ const WizardText = ({ path, fields, getValuesOfProperty, layerName }) => {
           choices={fontList}
           format={formatFontValue}
           parse={parseFontValue}
+          layerName={layerName}
         />
       </div>
       <div className={classes.configLine}>
@@ -152,6 +154,7 @@ const WizardText = ({ path, fields, getValuesOfProperty, layerName }) => {
           fields={fields}
           getValuesOfProperty={getValuesOfProperty}
           canGenerateLegend={false}
+          layerName={layerName}
         />
       </div>
       <div className={classes.configLine}>
@@ -195,6 +198,7 @@ const WizardText = ({ path, fields, getValuesOfProperty, layerName }) => {
           path={`${path}.style.text_halo_width`}
           fields={fields}
           getValuesOfProperty={getValuesOfProperty}
+          layerName={layerName}
         />
       </div>
     </>

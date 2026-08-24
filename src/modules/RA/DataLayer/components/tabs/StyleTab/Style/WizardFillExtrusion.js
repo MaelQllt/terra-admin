@@ -65,6 +65,7 @@ const WizardFillExtrusion = ({ path, fields, getValuesOfProperty, layerName }) =
           fields={fields}
           getValuesOfProperty={getValuesOfProperty}
           canGenerateLegend={false}
+          layerName={layerName}
         />
       </div>
 
@@ -91,6 +92,7 @@ const WizardFillExtrusion = ({ path, fields, getValuesOfProperty, layerName }) =
           fields={fields}
           getValuesOfProperty={getValuesOfProperty}
           canGenerateLegend={false}
+          layerName={layerName}
         />
       </div>
 

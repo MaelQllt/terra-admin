@@ -72,6 +72,7 @@ const WizardCircle = ({ path, fields, getValuesOfProperty, shouldDisplayLabels, 
           path={`${path}.style.circle_radius`}
           fields={fields}
           getValuesOfProperty={getValuesOfProperty}
+          layerName={layerName}
         />
       </div>
 
@@ -118,6 +119,7 @@ const WizardCircle = ({ path, fields, getValuesOfProperty, shouldDisplayLabels, 
           path={`${path}.style.circle_stroke_width`}
           fields={fields}
           getValuesOfProperty={getValuesOfProperty}
+          layerName={layerName}
         />
       </div>
 

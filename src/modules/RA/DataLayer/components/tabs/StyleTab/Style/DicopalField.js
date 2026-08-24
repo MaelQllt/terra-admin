@@ -35,20 +35,14 @@ const DicopalField = ({
   onReverseToggle,
 }) => {
   const classes = useStyles();
-  const applyingRef = useRef(false);
 
   const palettes = useMemo(
     () => getPalettes({ type: paletteType, number: value.length || 5 }),
     [paletteType, value.length],
   );
 
-  useEffect(() => {
-    applyingRef.current = false;
-  }, [value]);
-
   const interpolate = (name, count, rev) => {
     if (!name) return;
-    applyingRef.current = true;
     try {
       let colors;
       if (paletteType === 'diverging') {
@@ -120,11 +114,6 @@ const DicopalField = ({
   };
 
   const handleColorListChange = newValue => {
-    if (applyingRef.current) {
-      applyingRef.current = false;
-      onChange(newValue);
-      return;
-    }
     if (newValue.length !== value.length) {
       if (selectedPalette && paletteType !== 'custom') {
         interpolate(selectedPalette, newValue.length, reversed);

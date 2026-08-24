@@ -9,7 +9,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-export const DEFAULT_MAX_CLASSES = 10;
+export const DEFAULT_MAX_CLASSES = 15;
 
 const ColorListField = ({
   value, onChange = () => {}, maxClasses = DEFAULT_MAX_CLASSES,
@@ -42,6 +42,7 @@ const ColorListField = ({
           // eslint-disable-next-line react/no-array-index-key
           key={index}
           value={color}
+          format="hex"
           onChange={handleColorChange(index)}
         />
       ))}

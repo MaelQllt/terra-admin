@@ -1,9 +1,12 @@
 import React from 'react';
 import * as Plot from '@observablehq/plot';
+import { useLocale } from 'react-admin';
 
 import PlotChart from './PlotChart';
 
 const ClassifBucket = ({ breaksData }) => {
+  const locale = useLocale();
+
   const options = React.useMemo(() => {
     if (!breaksData || breaksData.length === 0) return null;
 
@@ -24,7 +27,7 @@ const ClassifBucket = ({ breaksData }) => {
         }),
         // Effectif par classe
         Plot.text(colorNbIndiv, {
-          text: d => d.nb.toLocaleString(),
+          text: d => d.nb.toLocaleString(locale),
           x: (d, i) => i,
           y: 0.5,
           frameAnchor: 'middle',
@@ -36,7 +39,7 @@ const ClassifBucket = ({ breaksData }) => {
         }),
       ],
     };
-  }, [breaksData]);
+  }, [breaksData, locale]);
 
   if (!options) return null;
 

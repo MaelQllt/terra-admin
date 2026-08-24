@@ -1,9 +1,11 @@
 import React from 'react';
 import * as Plot from '@observablehq/plot';
+import { useLocale } from 'react-admin';
 
 import PlotChart from './PlotChart';
 
 const DistribGraph = ({ data }) => {
+  const locale = useLocale();
   const { bins, boxplot, sample } = data || {};
 
   const aspect = React.useMemo(() => {
@@ -18,7 +20,7 @@ const DistribGraph = ({ data }) => {
       ? sample.map(() => boxFloor + Math.random() * (boxCeiling - boxFloor))
       : [];
 
-    return { boxFloor, boxCeiling, whiskerPos, jitterPositions, maxCount };
+    return { boxFloor, boxCeiling, whiskerPos, jitterPositions };
   }, [bins, sample]);
 
   const options = React.useMemo(() => {
@@ -53,44 +55,46 @@ const DistribGraph = ({ data }) => {
             r: 1.8,
           })]
           : []),
-        // Médiane
-        Plot.ruleX([boxplot.median], {
-          stroke: '#2c2c2c',
-          strokeWidth: 2.5,
-          y1: boxFloor,
-          y2: boxCeiling,
-        }),
-        // Boîte (Q1-Q3)
-        Plot.rectX([boxplot], {
-          x1: 'q1',
-          x2: 'q3',
-          y1: boxFloor,
-          y2: boxCeiling,
-          fill: 'none',
-          stroke: '#2c2c2c',
-          strokeWidth: 1.2,
-        }),
-        // Moustache inférieure (Q1-min)
-        Plot.ruleY([boxplot], {
-          x1: 'min',
-          x2: 'q1',
-          y: whiskerPos,
-          stroke: '#2c2c2c',
-          strokeWidth: 1.2,
-        }),
-        // Moustache supérieure (Q3-max)
-        Plot.ruleY([boxplot], {
-          x1: 'q3',
-          x2: 'max',
-          y: whiskerPos,
-          stroke: '#2c2c2c',
-          strokeWidth: 1.2,
-        }),
+        ...(boxplot ? [
+          // Médiane
+          Plot.ruleX([boxplot.median], {
+            stroke: '#2c2c2c',
+            strokeWidth: 2.5,
+            y1: boxFloor,
+            y2: boxCeiling,
+          }),
+          // Boîte (Q1-Q3)
+          Plot.rectX([boxplot], {
+            x1: 'q1',
+            x2: 'q3',
+            y1: boxFloor,
+            y2: boxCeiling,
+            fill: 'none',
+            stroke: '#2c2c2c',
+            strokeWidth: 1.2,
+          }),
+          // Moustache inférieure (Q1-min)
+          Plot.ruleY([boxplot], {
+            x1: 'min',
+            x2: 'q1',
+            y: whiskerPos,
+            stroke: '#2c2c2c',
+            strokeWidth: 1.2,
+          }),
+          // Moustache supérieure (Q3-max)
+          Plot.ruleY([boxplot], {
+            x1: 'q3',
+            x2: 'max',
+            y: whiskerPos,
+            stroke: '#2c2c2c',
+            strokeWidth: 1.2,
+          }),
+        ] : []),
       ],
       y: { ticks: 5, label: null },
-      x: { tickFormat: d => d.toLocaleString('fr'), label: null },
+      x: { tickFormat: d => d.toLocaleString(locale), label: null },
     };
-  }, [aspect, bins, boxplot, sample]);
+  }, [aspect, bins, boxplot, sample, locale]);
 
   if (!options) return null;
 

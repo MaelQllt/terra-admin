@@ -37,17 +37,7 @@ const GraduateValue = ({ path, Component = ValueListField,
   const classes = useStyles();
   const statsWrapperRef = React.useRef(null);
   const distribWrapperRef = React.useRef(null);
-  const rowRef = React.useRef(null);
   const [matchMinHeight, setMatchMinHeight] = React.useState(0);
-  const [rowWidth, setRowWidth] = React.useState(0);
-
-  React.useLayoutEffect(() => {
-    const el = rowRef.current;
-    if (!el) return undefined;
-    const ro = new ResizeObserver(([entry]) => { setRowWidth(entry.target.offsetWidth); });
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
 
   React.useEffect(() => {
     const ro = new ResizeObserver(() => {
@@ -174,7 +164,7 @@ const GraduateValue = ({ path, Component = ValueListField,
         )}
       </Field>
 
-      <div ref={rowRef} style={{ display: 'flex', gap: 16, marginTop: 16 }}>
+      <div style={{ display: 'flex', gap: 16, marginTop: 16 }}>
         <div style={{ flex: 1 }}>
           <Accordion defaultExpanded style={{ margin: 0 }}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -201,7 +191,7 @@ const GraduateValue = ({ path, Component = ValueListField,
         </div>
       </div>
 
-      <div style={{ marginTop: 16, width: rowWidth || undefined, flexShrink: 0 }}>
+      <div style={{ marginTop: 16 }}>
         <Accordion defaultExpanded>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography style={{ fontWeight: 'bold' }}>{translate('discret.preview')}</Typography>
