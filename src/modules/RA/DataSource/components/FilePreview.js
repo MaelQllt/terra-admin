@@ -191,6 +191,7 @@ const FilePreview = () => {
   const { input: { value: coordinatesFieldCount } } = useField('coordinates_field_count');
   const { input: { value: coordinatesSeparator } } = useField('coordinates_separator');
   const { input: { value: coordinateReferenceSystem } } = useField('coordinate_reference_system');
+  const { input: { value: geomTypeValue, onChange: onGeomTypeChange } } = useField('geom_type');
   const { t } = useTranslation();
 
   const [preview, setPreview] = React.useState(null);
@@ -253,6 +254,7 @@ const FilePreview = () => {
         .then(resp => {
           if (!cancelled) {
             if (resp.bbox) savedBboxRef.current = resp.bbox;
+            if (resp.geometry_type != null && !geomTypeValue) onGeomTypeChange(resp.geometry_type);
             setPreview(resp);
           }
         })
