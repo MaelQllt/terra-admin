@@ -75,8 +75,8 @@ const DataSourceFileFields = ({ translate: t, type, ...props }) => {
         label="datasource.form.geometry"
         validate={[required()]}
         choices={geomTypeChoices}
-        format={v => `${v}`}
-        parse={v => +v}
+        format={v => (v !== undefined && v !== null ? String(v) : '')}
+        parse={v => (v !== '' ? Number(v) : null)}
       />
 
       <TextInput
