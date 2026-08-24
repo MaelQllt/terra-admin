@@ -2,7 +2,6 @@ import React from 'react';
 import {
   FileInput,
   FileField,
-  TextInput,
   SelectInput,
   translate,
   useRecordContext,
@@ -15,6 +14,8 @@ import { geomTypeChoices, GPKG } from '..';
 import FieldGroup from '../../../../components/react-admin/FieldGroup';
 import GpkgLayerNameSelect from './GpkgLayerNameSelect';
 import FilePreview from './FilePreview';
+import IdFieldSelect from './IdFieldSelect';
+import useFilePreview from './useFilePreview';
 
 const DataSourceFileFields = ({ translate: t, type, ...props }) => {
   const record = useRecordContext();
@@ -22,6 +23,7 @@ const DataSourceFileFields = ({ translate: t, type, ...props }) => {
   const { input: { value: fileValue } } = useField('file');
   const fileName = fileValue?.rawFile?.name ?? fileValue?.title ?? '';
   const isGpkg = fileName.toLowerCase().endsWith('.gpkg') || type === GPKG;
+  const filePreview = useFilePreview();
 
   return (
     <FieldGroup {...props}>
@@ -68,7 +70,7 @@ const DataSourceFileFields = ({ translate: t, type, ...props }) => {
 
       {isGpkg && <GpkgLayerNameSelect />}
 
-      <FilePreview />
+      <FilePreview {...filePreview} />
 
       <SelectInput
         source="geom_type"
@@ -79,13 +81,7 @@ const DataSourceFileFields = ({ translate: t, type, ...props }) => {
         parse={v => (v !== '' ? Number(v) : null)}
       />
 
-      <TextInput
-        type="text"
-        source="id_field"
-        label="datasource.form.uid-field"
-        validate={required()}
-        helperText={t('datasource.form.uid-field-help')}
-      />
+      <IdFieldSelect fields={filePreview.preview?.fields} />
     </FieldGroup>
   );
 };
