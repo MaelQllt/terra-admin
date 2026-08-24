@@ -196,6 +196,7 @@ const FilePreview = () => {
   const [preview, setPreview] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
+  const savedBboxRef = React.useRef(null);
 
   const isEditMode = record?.id && !fileValue?.rawFile;
 
@@ -250,7 +251,10 @@ const FilePreview = () => {
       if (coordinateReferenceSystem) body.append('coordinate_reference_system', coordinateReferenceSystem);
       Api.request('geosource/file-preview/', { method: 'POST', body })
         .then(resp => {
-          if (!cancelled) setPreview(resp);
+          if (!cancelled) {
+            if (resp.bbox) savedBboxRef.current = resp.bbox;
+            setPreview(resp);
+          }
         })
         .catch(err => { if (!cancelled) setError(err?.message || String(err)); })
         .finally(() => { if (!cancelled) setLoading(false); });
@@ -289,6 +293,7 @@ const FilePreview = () => {
     column_count: columnCount,
   } = preview ?? {};
 
+  const effectiveBbox = bboxData ?? savedBboxRef.current;
   const hasMore = recordCount > MAX_DISPLAY;
   const hasGeom = !!geomName || !!geomTypes?.length;
   const geomLabel = mixedGeometries ? geomTypes?.join(', ') : geomName;
@@ -400,7 +405,7 @@ const FilePreview = () => {
                       </TableContainer>
                       )}
 
-                      <BBoxMap bbox={bboxData} />
+                      <BBoxMap bbox={effectiveBbox} />
                     </>
                   )}
                   {!preview && !loading && !error && isGpkgFile && !layerName && (
