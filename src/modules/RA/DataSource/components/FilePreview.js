@@ -216,7 +216,7 @@ const FilePreview = ({
                 <>
                   <Skeleton variant="rect" width="70%" height={20} style={{ marginBottom: 8 }} />
                   <Skeleton variant="rect" height={180} style={{ marginBottom: 8 }} />
-                  <Skeleton variant="rect" height={220} style={{ marginTop: 8, borderRadius: 4 }} />
+                  <Skeleton variant="rect" height={240} style={{ marginTop: 8, borderRadius: 4 }} />
                 </>
               ) : (
                 <>
@@ -303,6 +303,11 @@ const FilePreview = ({
                       )}
 
                       <BBoxMap bbox={bbox} />
+                      {bbox && (
+                      <Typography variant="caption" className={classes.moreRow} style={{ paddingLeft: 4 }}>
+                        {t('datasource.form.preview.extent-hint')}
+                      </Typography>
+                      )}
                     </>
                   )}
                   {!preview && !loading && !error && isGpkgFile && !layerName && (

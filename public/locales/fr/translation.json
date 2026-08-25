@@ -334,7 +334,8 @@
         "geom-type": "Type de géométrie :",
         "mixed-geometries-warning": "Attention : ce fichier comporte des géométries différentes.",
         "crs": "Projection :",
-        "no-geodata": "Aperçu cartographique indisponible, veuillez renseigner les champs géographiques",
+        "no-geodata": "Aperçu cartographique indisponible, veuillez renseigner le nom du champ de coordonnées.",
+        "extent-hint": "Aperçu de l'emprise uniquement, les données ne sont pas affichées.",
         "no-layer": "Sélectionnez un layer à prévisualiser"
       },
       "use-by": "Utilisé par",
