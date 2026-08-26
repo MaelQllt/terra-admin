@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Create,
   SimpleForm,
-  RadioButtonGroupInput,
   FormDataConsumer,
 } from 'react-admin';
 
@@ -11,6 +10,7 @@ import DataSourceFileFields from '../components/DataSourceFileFields';
 import DataSourceDbFields from '../components/DataSourceDbFields';
 import DataSourceWMTSField from '../components/DataSourceWMTSField';
 import DataSourceCSVFields from '../components/DataSourceCSVFields';
+import DataSourceTypeInput from '../components/DataSourceTypeInput';
 import DefaultActions from '../../../../components/react-admin/DefaultActions';
 
 import {
@@ -37,7 +37,7 @@ export const DataSourceCreate = props => (
     <SimpleForm>
       <DataSourceMainFields />
 
-      <RadioButtonGroupInput
+      <DataSourceTypeInput
         source="_type"
         label="datasource.form.data-type"
         validate={defaultRequired}
