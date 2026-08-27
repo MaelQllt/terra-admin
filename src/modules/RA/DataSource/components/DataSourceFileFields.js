@@ -11,6 +11,7 @@ import { Typography } from '@material-ui/core';
 
 import { fileAcceptByType, geomTypeChoices, GPKG } from '..';
 import FieldGroup from '../../../../components/react-admin/FieldGroup';
+import DownloadSourceFileButton from './DownloadSourceFileButton';
 import GpkgLayerNameSelect from './GpkgLayerNameSelect';
 import FilePreview from './FilePreview';
 import IdFieldSelect from './IdFieldSelect';
@@ -31,7 +32,7 @@ const DataSourceFileFields = ({ translate: t, type, ...props }) => {
         <Typography
           variant="body2"
           style={{
-            width: '100%', marginBottom: 2, display: 'flex', alignItems: 'baseline',
+            width: '100%', marginBottom: 2, display: 'flex', alignItems: 'center',
           }}
         >
           <strong style={{ marginRight: '4px', flexShrink: 0 }}>
@@ -40,6 +41,11 @@ const DataSourceFileFields = ({ translate: t, type, ...props }) => {
           <span style={{ wordBreak: 'break-all' }}>
             {record.filename}
           </span>
+          <DownloadSourceFileButton
+            recordId={record.id}
+            filename={record.filename}
+            style={{ marginLeft: 6 }}
+          />
         </Typography>
       )}
 

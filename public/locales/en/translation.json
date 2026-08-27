@@ -296,6 +296,9 @@
         "related-files": "Linked files",
         "replace": "Replace file",
         "current": "Current file",
+        "download": "Download the linked file",
+        "downloaded": "File downloaded",
+        "downloadError": "File download failed",
         "placeholder": "Drop here GeoJSON, zipped shapefile or GeoPackage.",
         "placeholderCSV": "Drop here CSV file.",
         "unsupported": "This file type is not supported, please try again."

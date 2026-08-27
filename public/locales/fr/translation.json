@@ -348,6 +348,9 @@
         "related-files": "Fichiers associés",
         "replace": "Remplacer le fichier",
         "current": "Fichier actuel",
+        "download": "Téléchargez le fichier lié",
+        "downloaded": "Fichier téléchargé",
+        "downloadError": "Le téléchargement du fichier a échoué",
         "placeholder": "Déposez ici le GeoJSON, un zip des fichiers Shapefile ou un GeoPackage.",
         "placeholderCSV": "Déposez ici le fichier CSV",
         "unsupported": "Ce fichier n'est pas supporté, veuillez réessayer."

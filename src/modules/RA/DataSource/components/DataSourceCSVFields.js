@@ -10,25 +10,51 @@ import {
   FormDataConsumer,
   translate,
   required,
+  useRecordContext,
 } from 'react-admin';
 
 
+import { Typography } from '@material-ui/core';
 import {
   fieldEncodingChoices,
   fieldSCRChoices,
 } from '..';
 
 import FieldGroup from '../../../../components/react-admin/FieldGroup';
+import DownloadSourceFileButton from './DownloadSourceFileButton';
 import FilePreview from './FilePreview';
 import IdFieldSelect from './IdFieldSelect';
 import RestrictedFileInput from './RestrictedFileInput';
 import useFilePreview from './useFilePreview';
 
 const DataSourceCSVFields = ({ translate: t, type, ...props }) => {
+  const record = useRecordContext();
+  const isEdit = !!record?.id;
   const filePreview = useFilePreview();
 
   return (
     <FieldGroup {...props}>
+      {isEdit && record.filename && (
+        <Typography
+          variant="body2"
+          style={{
+            width: '100%', marginBottom: 2, display: 'flex', alignItems: 'center',
+          }}
+        >
+          <strong style={{ marginRight: '4px', flexShrink: 0 }}>
+            {t('datasource.form.file.current')}:
+          </strong>
+          <span style={{ wordBreak: 'break-all' }}>
+            {record.filename}
+          </span>
+          <DownloadSourceFileButton
+            recordId={record.id}
+            filename={record.filename}
+            style={{ marginLeft: 6 }}
+          />
+        </Typography>
+      )}
+
       <RestrictedFileInput
         source="file"
         accept=".csv"
