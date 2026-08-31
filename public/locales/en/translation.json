@@ -370,7 +370,9 @@
         "ended": "Ended at",
         "total": "Total lines processed",
         "errors-detail": "Detailed errors by line",
-        "no-error": "No error found"
+        "no-error": "No error found",
+        "sync-progress": "%{processed} / %{total} features indexed",
+        "sync-progress-waiting": "Preparing the synchronization…"
       },
       "refresh": {
         "accepted": "Refresh accepted",
